@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Game</title>
+        <style>
+            .playground {
+                position: relative;
+                background-color: green;
+                height: 550px;
+                width: 550px;
+                float: left;
+            }
+            .mosquito {
+                position: relative;
+                height: 80px; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="playground">
+            <img 
+            class="mosquito"
+            id="mosquito"
+            onclick="hitMosquito()"
+            src="https://w7.pngwing.com/pngs/419/305/png-transparent-mosquito-control-aedes-albopictus-household-insect-repellents-baygon-anti-mosquito-aedes-albopictus-mosquito-control-mosquitoborne-disease-thumbnail.png"/>
+            
+        </div>
+        <div class="controls">
+            <h2 id="gameStatus"></h2>
+            <h3>
+                <span>Total</span>
+            <span id="totalHit"></span>
+            </h3>
+
+        </div>
+        <button onclick="startGame()">Start Game</button>
+        <script>
+            let hitCount = 0
+            let isGameStart = false
+            function startGame() {
+                document.getElementById('gameStatus').innerHTML ='Game started'
+                hitCount = 0
+                isGameStart = true
+                let mosquito = document.getElementById('mosquito');
+            let time = setInterval(() => {
+                let i = Math.floor(Math.random()*500) + 1;
+                let j = Math.floor(Math.random()*500) + 1;
+                mosquito.style.left = i + 'px';
+            mosquito.style.top = j + 'px';
+            }, 1000);
+            setTimeout(() => {
+                clearTimeout(time);
+                isGameStart = false
+                document.getElementById('gameStatus').innerHTML ='Game over'
+            }, 30000);
+            }
+
+            function hitMosquito() {
+                if(isGameStart) {
+                hitCount++
+                document.getElementById('totalHit').innerText= hitCount
+            }
+        }
+            
+
+        </script>
+    </body>
+</html>

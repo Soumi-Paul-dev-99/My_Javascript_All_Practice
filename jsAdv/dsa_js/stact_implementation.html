@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>basic stack implementation</title>
+    <script>
+    //    class Stack {
+    //     constructor() {
+    //         this.stack = [] //i am declaring a local variable call stack with the empty array.
+    //     }
+    //     push(element) {
+    //         this.stack.push(element)
+    //     }
+    //     pop()  {
+    //         if(this.isEmpty()) {
+    //             return "Stack is empty"
+    //         }
+    //         return this.stack.pop()
+    //     }
+
+    //     peek() {
+    //         if(this.isEmpty()) {
+    //             return "Stack is empty"
+    //         }
+    //         // return this.stack[this.stack.length - 1]
+    //         return this.stack[this.size() - 1]
+    //     }
+    //     isEmpty() {
+    //         // return this.stack.length ===0
+    //         return this.size() ===0
+    //     }
+    //     size() {
+    //         return this.stack.length
+    //     }
+    //    }
+
+    //    const stack = new Stack()
+
+    //    stack.push(10)
+    //    stack.push(69)
+    //    stack.push(420)
+
+    //    console.log(stack.peek());
+    //    console.log(stack.pop());
+    //    console.log(stack.peek());
+
+
+    //ques1. Given an input string s, reverse the porder of the words.
+    //Input: "the sky is blue" ------> o/p: "blue is sky the"
+    //Input: "  hello world  " ------> o/p: "world hello"
+    //Input: "a good   example" ------> o/p: "example good a"
+
+   // "the sky is blue" => [the,sky,is,blue] split the sentence into white spaces.
+   //create new stack [] => [the,sky,is,blue] copy the array inside of the stack => we will itarate through the stack. one by one pop the elements. add white space infront of it.
+
+    const reverseString = function(s) {
+        const splits = s.split(" ")
+        const stack = []
+
+        for(let i of splits) {
+            stack.push(i)
+        }
+        let finals =""
+
+        while (stack.length) {
+            const current = stack.pop() 
+
+            if(current) {
+                finals += " " + current
+            }
+        }
+        return finals.trim()
+    }
+
+    console.log(reverseString("the sky is blue"));
+    console.log(reverseString("a good   example"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

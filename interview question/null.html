@@ -1,0 +1,66 @@
+<!-- remove null and undefined properties from an object -->
+
+<!-- <script>
+    const obj = {
+        a: 1,
+        b: null,
+        c: undefined,
+        d: 'hello'
+    };
+
+    const newObj = Object.entries(obj).filter
+</script> -->
+
+<!-- <script>
+    const course ={
+        lecture:"hindi",
+        section:"three",
+        title:"javascript",
+        notes:{
+            intro:"welcome"
+        },
+        enroll (){
+console.log("you are enrolled")
+        }
+    }
+
+    course.enroll()
+    console.log(course)
+    course.price=999
+</script> -->
+
+
+
+<!-- //Factory Function// -->
+<!-- <script>
+    function factfun(title){
+        return{
+            title:title,
+            enroll(){
+                console.log("enrolled")
+            }
+
+        }
+    }
+const course = factfun("javascript");
+    console.log(course)
+</script> -->
+
+<!-- constructor  -->
+
+<script>
+    function Course(title){
+        this.title=title,
+        this.enroll = function(){
+            console.log("you are successfully enrolled");
+        }
+    }
+    const course = new Course("javascript");
+    delete course.title;
+    course.checkelement= function(){
+        console.log("30 years old")
+    }
+    course.enroll();
+    console.log(course)
+
+</script>

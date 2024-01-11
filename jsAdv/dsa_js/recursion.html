@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recursion</title>
+    <script>
+          //recursion
+    //   function apple(x){
+    //         console.warn(x)
+    //         if(x<10){
+    //             apple(x+1);
+    //         }
+            
+    //     }
+    //     let data =0;
+    //     apple(data);
+
+    // function factorial(item) {
+    //     if(item ==0) {
+    //         return 1
+    //     }
+    //     return item*factorial(item-1)
+    // }
+
+    // let data = 5
+    // console.log(factorial(data));
+
+    // function countDown(n) {
+    //     if(n===0)
+    //     return;
+    //     console.log(n);
+    //     countDown(n-1)
+
+    // }
+
+    // countDown(3)
+
+    // function calculateTotalRecursion(n, total=0) {
+    //     if(n===0)
+    //     return total
+    //     return calculateTotalRecursion(n-1, total +=n)
+    // }
+
+    // console.log(calculateTotalRecursion(3));
+
+    const teamStructure = {
+        name: "raja",
+        teams: [{
+            name:"rohit",
+            teams:[]
+        },
+       {
+        name:"rana",
+        teams:[]
+       }
+    ]
+    }
+
+    function getTeamDetails (n) {
+        if(n.teams.length === 0) 
+        return;
+
+        n.teams.forEach(team => {
+            console.log(team);
+            getTeamDetails(team)
+        });
+    }
+
+    getTeamDetails(teamStructure)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- constructor function in javascript
+How do you create an object using a constructor function in JavaScript? -->
+<script>
+
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    let person=new Person("jogn",30)
+    console.log(person)
+</script>
+
+
+<!--  How do you create an object using prototypal inheritance in JavaScript? -->
+
+<script>
+
+
+const person1 = {
+name:"jogn",
+age:30,
+greet:function(){
+    console.log(`hello myself ${this.name} and I am ${this.age}`)
+   return `hello myself ${this.name} and I am ${this.age}`
+}
+};
+
+
+const emp  = Object.create(person1);
+console.log(person1.greet())
+console.log(person1)
+emp.jobTitle = "software engineer"
+emp.name = "soumi"
+console.log(emp.greet())
+console.log(emp);
+</script>

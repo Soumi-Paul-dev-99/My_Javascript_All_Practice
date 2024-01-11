@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div>hi</div>
+    <div id="thisOne">how</div>
+    <div class="ok">are</div>
+    <span>Temp</span>
+    <div class="okay">you</div>
+</body>
+<script src="./index.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array element print</title>
+</head>
+<body>
+    <script>
+
+        function getUniq(arr) {
+            var unique = []
+            for (let i = 0; i < arr.length; i++) {
+               if(unique.indexOf(arr[i]) == -1) {
+                unique.push(arr[i])
+               }
+                
+            }
+            return unique
+        }
+
+       var students = ["ram","raja","rohit","rana","rakhi","riya","ram","rohit","rakhi"]
+
+       var uniq = getUniq(students)
+       console.log(uniq);
+ 
+    </script>
+</body>
+</html>
